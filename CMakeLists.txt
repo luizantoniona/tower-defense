@@ -14,6 +14,8 @@ sfml-window
 
 target_link_libraries(${PROJECT_NAME} ${EXTERNAL_LIBRARIES})
 
+add_subdirectory(Window)
+
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
