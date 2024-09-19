@@ -3,10 +3,8 @@
 using Game::GameManager;
 
 int main() {
-    // Cria uma instância do jogo
-    GameManager game;
 
-    // Inicia o loop principal do jogo
+    GameManager game;
     game.run();
 
     return 0;
