@@ -14,6 +14,7 @@ sfml-window
 
 target_link_libraries(${PROJECT_NAME} ${EXTERNAL_LIBRARIES})
 
+add_subdirectory(Game)
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 
