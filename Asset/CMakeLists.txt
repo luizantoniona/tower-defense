@@ -1,14 +1,8 @@
 set(SOURCES
-GameScreen.cpp
-MainMenuScreen.cpp
 )
 
 set(HEADERS
-Screen_Globals.h
-Screen.h
-ScreenType.h
-GameScreen.h
-MainMenuScreen.h
+AssetType.h
 )
 
 target_sources(${PROJECT_NAME} PUBLIC ${SOURCES})

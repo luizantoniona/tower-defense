@@ -2,9 +2,12 @@
 
 #include <SFML/Graphics.hpp>
 
-#include <Game/Game_Globals.h>
+#include <Manager/ManagerGlobals.h>
+#include <Manager/ScreenManager.h>
 
-BEGIN_GAME_NAMESPACE
+using namespace Manager;
+
+BEGIN_MANAGER_NAMESPACE
 
 class GameManager {
 public:
@@ -13,10 +16,10 @@ public:
 
 private:
     sf::RenderWindow _window;
-    // ScreenManager screenManager;
+    ScreenManager _screenManager;
     void processEvents();
     void update();
     void render();
 };
 
-END_GAME_NAMESPACE
+END_MANAGER_NAMESPACE

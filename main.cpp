@@ -1,6 +1,6 @@
-#include <Game/GameManager.h>
+#include <Manager/GameManager.h>
 
-using Game::GameManager;
+using Manager::GameManager;
 
 int main() {
 

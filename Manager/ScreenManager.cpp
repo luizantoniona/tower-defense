@@ -1,20 +1,17 @@
 #include "ScreenManager.h"
-#include <iostream>
 
-ScreenManager::ScreenManager() : _activeScreen(nullptr) {}
+BEGIN_MANAGER_NAMESPACE
+
+ScreenManager::ScreenManager() : 
+_activeScreen(nullptr) 
+{
+}
 
 void ScreenManager::setScreen(const ScreenType& screenType) {
-    auto it = _screens.find(screenType);
-    if (it != _screens.end()) {
-        _activeScreen = it->second; // Define a tela ativa
-
-    } else {
-        std::cout << "Screen not found: " << static_cast<int>(screenType) << std::endl;
-    }
+        _activeScreen = _screens.at(screenType);
 }
 
 void ScreenManager::addScreen(const ScreenType& screenType, std::shared_ptr<Screen> screen) {
-    // Adiciona uma nova tela ao mapa de telas
     _screens[screenType] = screen;
 }
 
@@ -35,3 +32,5 @@ void ScreenManager::render(sf::RenderWindow& window) {
         _activeScreen->render(window);
     }
 }
+
+END_MANAGER_NAMESPACE
