@@ -1,9 +1,14 @@
 set(SOURCES
-Map.cpp
+Map/Cell.cpp
+Map/Map.cpp
 )
 
 set(HEADERS
-Map.h
+EntityGlobal.h
+Map/Cell.h
+Map/CellType.h
+Map/Map.h
+Map/MapType.h
 )
 
 target_sources(${PROJECT_NAME} PUBLIC ${SOURCES})
