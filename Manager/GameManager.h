@@ -5,7 +5,7 @@
 #include <Manager/ManagerGlobals.h>
 #include <Manager/ScreenManager.h>
 
-using namespace Manager;
+using Manager::ScreenManager;
 
 BEGIN_MANAGER_NAMESPACE
 
@@ -16,10 +16,12 @@ public:
 
 private:
     sf::RenderWindow _window;
+    sf::View _view;
     ScreenManager _screenManager;
     void processEvents();
     void update();
     void render();
+    void adjustView();
 };
 
 END_MANAGER_NAMESPACE
