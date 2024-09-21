@@ -6,6 +6,7 @@ include_directories( ${includes} )
 add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
 
 set(EXTERNAL_LIBRARIES
+jsoncpp
 sfml-audio
 sfml-graphics
 sfml-system

@@ -4,8 +4,6 @@ enum class FontType {
     Arial,
 };
 
-enum class TextureType {
-};
+enum class TextureType {};
 
-enum class SoundType {
-};
+enum class SoundType {};
