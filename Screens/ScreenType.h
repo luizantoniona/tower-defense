@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Screens/Screen_Globals.h>
+#include <Screens/ScreenGlobals.h>
 
 BEGIN_SCREEN_NAMESPACE
 
