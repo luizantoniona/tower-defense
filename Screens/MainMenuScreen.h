@@ -4,16 +4,18 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <Manager/ScreenManager.h>
 #include <Screens/Screen.h>
 #include <Screens/ScreenGlobals.h>
 
+using Manager::ScreenManager;
 using Screens::Screen;
 
 BEGIN_SCREEN_NAMESPACE
 
 class MainMenuScreen : public Screen {
 public:
-    MainMenuScreen();
+    MainMenuScreen( ScreenManager& screenManager );
 
     void handleInput( const sf::Event& event ) override;
     void update() override;
@@ -21,8 +23,9 @@ public:
 
 private:
     void initMenu();
-    bool isMouseOverOption( const sf::Text& option,
-                            const sf::Vector2f& mousePos );
+    bool isMouseOverOption( const sf::Text& option, const sf::Vector2f& mousePos );
+
+    ScreenManager& _screenManager;
 
     sf::Font _font;
     sf::Text _title;
