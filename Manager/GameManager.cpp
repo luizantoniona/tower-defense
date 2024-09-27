@@ -10,27 +10,22 @@ using Screens::ScreenType;
 
 namespace {
 constexpr const char* DISPLAY_NAME = "Geometric Defense";
-constexpr const int SCREEN_WIDTH = 1000;
-constexpr const int SCREEN_HEIGHT = 800;
 } // namespace
 
 BEGIN_MANAGER_NAMESPACE
 
-GameManager::GameManager()
-    : _window( sf::VideoMode( SCREEN_WIDTH, SCREEN_HEIGHT ), DISPLAY_NAME ),
-      _screenManager() {
-    _view.reset(
-        sf::FloatRect( 0, 0, float( SCREEN_WIDTH ), float( SCREEN_HEIGHT ) ) );
+GameManager::GameManager() : _window( sf::VideoMode::getDesktopMode(), DISPLAY_NAME, sf::Style::Fullscreen ), _screenManager() {
+
+    sf::VideoMode desktopMode = sf::VideoMode::getDesktopMode();
+
+    _view.reset( sf::FloatRect( 0, 0, float( desktopMode.width ), float( desktopMode.height ) ) );
     _window.setView( _view );
 
-    _screenManager.addScreen( ScreenType::MainMenuScreen,
-                              std::make_shared<MainMenuScreen>() );
+    _screenManager.addScreen( ScreenType::MainMenuScreen, std::make_shared<MainMenuScreen>( _screenManager ) );
 
-    _screenManager.addScreen(
-        ScreenType::GameScreen,
-        std::make_shared<GameScreen>( SCREEN_HEIGHT, SCREEN_WIDTH ) );
+    _screenManager.addScreen( ScreenType::GameScreen, std::make_shared<GameScreen>( desktopMode.height, desktopMode.width ) );
 
-    _screenManager.setScreen( ScreenType::GameScreen );
+    _screenManager.setScreen( ScreenType::MainMenuScreen );
 }
 
 void GameManager::run() {
@@ -64,7 +59,7 @@ void GameManager::render() {
 }
 
 void GameManager::adjustView() {
-    _view.setCenter( float( SCREEN_WIDTH ) / 2, float( SCREEN_HEIGHT ) / 2 );
+    _view.setCenter( float( sf::VideoMode::getDesktopMode().width ) / 2, float( sf::VideoMode::getDesktopMode().height ) / 2 );
     _window.setView( _view );
 }
 
