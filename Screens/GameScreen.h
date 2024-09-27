@@ -2,10 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <Entity/Map/Map.h>
 #include <Screens/Screen.h>
 #include <Screens/ScreenGlobals.h>
-
-#include <Entity/Map/Map.h>
 
 using Entity::Map;
 using Screens::Screen;

@@ -14,8 +14,7 @@ using Manager::AssetManager;
 
 BEGIN_ENTITY_NAMESPACE
 
-Map::Map( MapType mapType, int windowHeight, int windowWidth )
-    : _width( 0 ), _height( 0 ), _mapType( mapType ) {
+Map::Map( MapType mapType, int windowHeight, int windowWidth ) : _width( 0 ), _height( 0 ), _mapType( mapType ) {
 
     Json::Value mapJson = AssetManager::instance().map( mapType );
 
@@ -28,11 +27,9 @@ Map::Map( MapType mapType, int windowHeight, int windowWidth )
     for ( int y = 0; y < _height; ++y ) {
         for ( int x = 0; x < _width; ++x ) {
 
-            CellType cellType =
-                static_cast<CellType>( mapJson[ "cells" ][ y ][ x ].asInt() );
+            CellType cellType = static_cast<CellType>( mapJson[ "cells" ][ y ][ x ].asInt() );
 
-            Cell cell( cellType, x * cellWidth, y * cellHeight, cellWidth,
-                       cellHeight );
+            Cell cell( cellType, x * cellWidth, y * cellHeight, cellWidth, cellHeight );
 
             _grid.push_back( cell );
         }

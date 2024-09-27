@@ -34,7 +34,6 @@ GameManager::GameManager()
 }
 
 void GameManager::run() {
-
     adjustView();
 
     while ( _window.isOpen() ) {
@@ -54,7 +53,9 @@ void GameManager::processEvents() {
     }
 }
 
-void GameManager::update() { _screenManager.update(); }
+void GameManager::update() {
+    _screenManager.update();
+}
 
 void GameManager::render() {
     _window.clear();

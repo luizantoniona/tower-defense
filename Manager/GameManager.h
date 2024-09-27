@@ -18,6 +18,7 @@ private:
     sf::RenderWindow _window;
     sf::View _view;
     ScreenManager _screenManager;
+
     void processEvents();
     void update();
     void render();

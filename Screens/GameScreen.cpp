@@ -6,8 +6,8 @@ using Entity::MapType;
 
 BEGIN_SCREEN_NAMESPACE
 
-GameScreen::GameScreen( int windowHeight, int windowWidth )
-    : _map( MapType::Teste, windowHeight, windowWidth ) {}
+GameScreen::GameScreen( int windowHeight, int windowWidth ) : _map( MapType::Teste, windowHeight, windowWidth ) {
+}
 
 void GameScreen::handleInput( const sf::Event& event ) {
     if ( event.type == sf::Event::KeyPressed ) {
@@ -16,8 +16,11 @@ void GameScreen::handleInput( const sf::Event& event ) {
     }
 }
 
-void GameScreen::update() {}
+void GameScreen::update() {
+}
 
-void GameScreen::render( sf::RenderWindow& window ) { _map.render( window ); }
+void GameScreen::render( sf::RenderWindow& window ) {
+    _map.render( window );
+}
 
 END_SCREEN_NAMESPACE

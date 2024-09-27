@@ -19,8 +19,7 @@ public:
     ScreenManager();
 
     void setScreen( const ScreenType& screenType );
-    void addScreen( const ScreenType& screenType,
-                    std::shared_ptr<Screen> screen );
+    void addScreen( const ScreenType& screenType, std::shared_ptr<Screen> screen );
     void handleInput( const sf::Event& event );
     void update();
     void render( sf::RenderWindow& window );

@@ -2,14 +2,14 @@
 
 BEGIN_MANAGER_NAMESPACE
 
-ScreenManager::ScreenManager() : _activeScreen( nullptr ) {}
+ScreenManager::ScreenManager() : _activeScreen( nullptr ) {
+}
 
 void ScreenManager::setScreen( const ScreenType& screenType ) {
     _activeScreen = _screens.at( screenType );
 }
 
-void ScreenManager::addScreen( const ScreenType& screenType,
-                               std::shared_ptr<Screen> screen ) {
+void ScreenManager::addScreen( const ScreenType& screenType, std::shared_ptr<Screen> screen ) {
     _screens[ screenType ] = screen;
 }
 
