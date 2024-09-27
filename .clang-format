@@ -7,3 +7,5 @@ DerivePointerAlignment: false
 PointerAlignment: Left
 SpacesInParentheses: true
 SpacesInSquareBrackets: true
+ColumnLimit: 128
+AllowShortFunctionsOnASingleLine: None
