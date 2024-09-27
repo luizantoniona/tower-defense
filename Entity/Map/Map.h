@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <Entity/EntityGlobals.h>
-#include <Entity/Map/Cell.h>
+#include <Entity/Map/Cell/Cell.h>
 #include <Entity/Map/MapType.h>
 
 using Entity::Cell;

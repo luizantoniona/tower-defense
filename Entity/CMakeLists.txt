@@ -1,12 +1,12 @@
 set(SOURCES
-Map/Cell.cpp
+Map/Cell/Cell.cpp
 Map/Map.cpp
 )
 
 set(HEADERS
 EntityGlobal.h
-Map/Cell.h
-Map/CellType.h
+Map/Cell/Cell.h
+Map/Cell/CellType.h
 Map/Map.h
 Map/MapType.h
 )

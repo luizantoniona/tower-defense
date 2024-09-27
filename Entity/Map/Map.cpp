@@ -6,7 +6,7 @@
 #include <sys/types.h>
 
 #include <Asset/AssetType.h>
-#include <Entity/Map/CellType.h>
+#include <Entity/Map/Cell/CellType.h>
 #include <Manager/AssetManager.h>
 
 using Entity::CellType;
@@ -31,31 +31,8 @@ Map::Map( MapType mapType, int windowHeight, int windowWidth )
             CellType cellType =
                 static_cast<CellType>( mapJson[ "cells" ][ y ][ x ].asInt() );
 
-            sf::Color color = sf::Color::White;
-            switch ( cellType ) {
-            case CellType::Empty: {
-                color = sf::Color::Green;
-                break;
-            }
-            case CellType::Path: {
-                color = sf::Color::Red;
-                break;
-            }
-            case CellType::SpawnPoint: {
-                color = sf::Color::Blue;
-                break;
-            }
-            case CellType::PlayerBase: {
-                color = sf::Color::Yellow;
-                break;
-            }
-            default: {
-                break;
-            }
-            }
-
-            Cell cell( x * cellWidth, y * cellHeight, 0, cellWidth, cellHeight,
-                       cellType, color );
+            Cell cell( cellType, x * cellWidth, y * cellHeight, cellWidth,
+                       cellHeight );
 
             _grid.push_back( cell );
         }
@@ -64,12 +41,7 @@ Map::Map( MapType mapType, int windowHeight, int windowWidth )
 
 void Map::render( sf::RenderWindow& window ) {
     for ( const Cell& cell : _grid ) {
-        sf::RectangleShape rectangle(
-            sf::Vector2f( cell.width(), cell.height() ) );
-        rectangle.setPosition( cell.x(), cell.y() );
-        rectangle.setFillColor( cell.color() );
-
-        window.draw( rectangle );
+        window.draw( cell.getRectangle() );
     }
 }
 
