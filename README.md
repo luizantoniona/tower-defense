@@ -1,4 +1,4 @@
-## Game Project
+## Tower Defense Game Project
 - C++
 - CMake
 - SFML
