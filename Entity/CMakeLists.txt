@@ -1,4 +1,5 @@
 set(SOURCES
+Enemy/Enemy.cpp
 GUI/MainPanel.cpp
 Map/Cell/Cell.cpp
 Map/Map.cpp
@@ -7,6 +8,8 @@ Tower/Tower.cpp
 
 set(HEADERS
 EntityGlobal.h
+Enemy/Enemy.h
+Enemy/EnemyType.h
 GUI/MainPanel.h
 Map/Cell/Cell.h
 Map/Cell/CellType.h
