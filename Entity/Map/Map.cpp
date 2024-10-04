@@ -14,15 +14,15 @@ using Manager::AssetManager;
 
 BEGIN_ENTITY_NAMESPACE
 
-Map::Map( MapType mapType, int windowHeight, int windowWidth ) : _width( 0 ), _height( 0 ), _mapType( mapType ) {
+Map::Map( MapType mapType, int mapHeight, int mapWidth ) : _width( 0 ), _height( 0 ), _mapType( mapType ) {
 
     Json::Value mapJson = AssetManager::instance().map( mapType );
 
     _height = mapJson[ "height" ].asInt();
     _width = mapJson[ "width" ].asInt();
 
-    int cellHeight = windowHeight / _height;
-    int cellWidth = windowWidth / _width;
+    int cellHeight = mapHeight / _height;
+    int cellWidth = mapWidth / _width;
 
     for ( int y = 0; y < _height; ++y ) {
         for ( int x = 0; x < _width; ++x ) {

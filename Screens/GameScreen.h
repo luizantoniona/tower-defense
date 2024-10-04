@@ -20,7 +20,7 @@ public:
     void render( sf::RenderWindow& window ) override;
 
 private:
-    Map _map;
+    std::unique_ptr<Map> _map;
     // Aqui, podemos adicionar membros como o mapa, torres, inimigos, etc.
     // Exemplo simples de um objeto de jogo
     // Outros elementos do jogo (inimigos, torres, etc.)

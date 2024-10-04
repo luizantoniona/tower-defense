@@ -15,7 +15,7 @@ BEGIN_ENTITY_NAMESPACE
 
 class Map {
 public:
-    Map( MapType mapType, int windowHeight, int windowWidth );
+    Map( MapType mapType, int mapHeight, int mapWidth );
 
     void render( sf::RenderWindow& window );
 
