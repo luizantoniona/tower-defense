@@ -1,10 +1,12 @@
 set(SOURCES
+GUI/MainPanel.cpp
 Map/Cell/Cell.cpp
 Map/Map.cpp
 )
 
 set(HEADERS
 EntityGlobal.h
+GUI/MainPanel.h
 Map/Cell/Cell.h
 Map/Cell/CellType.h
 Map/Map.h

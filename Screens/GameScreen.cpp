@@ -1,5 +1,7 @@
 #include "GameScreen.h"
 
+#include <memory>
+
 #include <Entity/Map/MapType.h>
 
 using Entity::MapType;
@@ -11,6 +13,10 @@ GameScreen::GameScreen( int windowHeight, int windowWidth ) : _map( nullptr ), _
     int mapHeight = windowHeight;
     int mapWidth = 3 * ( windowWidth / 4 );
     _map = std::make_unique<Map>( MapType::Teste, mapHeight, mapWidth );
+
+    int panelHeight = windowHeight;
+    int panelWidth = ( windowWidth / 4 );
+    _mainPanel = std::make_unique<MainPanel>( panelHeight, panelWidth );
 }
 
 void GameScreen::handleInput( const sf::Event& event ) {
@@ -24,6 +30,7 @@ void GameScreen::update() {
 }
 
 void GameScreen::render( sf::RenderWindow& window ) {
+    _mainPanel->render( window );
     _map->render( window );
 }
 

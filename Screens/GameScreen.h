@@ -1,11 +1,15 @@
 #pragma once
 
+#include <memory>
+
 #include <SFML/Graphics.hpp>
 
+#include <Entity/GUI/MainPanel.h>
 #include <Entity/Map/Map.h>
 #include <Screens/Screen.h>
 #include <Screens/ScreenGlobals.h>
 
+using Entity::MainPanel;
 using Entity::Map;
 using Screens::Screen;
 
@@ -20,6 +24,7 @@ public:
     void render( sf::RenderWindow& window ) override;
 
 private:
+    std::unique_ptr<MainPanel> _mainPanel;
     std::unique_ptr<Map> _map;
     // Aqui, podemos adicionar membros como o mapa, torres, inimigos, etc.
     // Exemplo simples de um objeto de jogo
