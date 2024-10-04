@@ -2,6 +2,7 @@ set(SOURCES
 GUI/MainPanel.cpp
 Map/Cell/Cell.cpp
 Map/Map.cpp
+Tower/Tower.cpp
 )
 
 set(HEADERS
@@ -11,6 +12,8 @@ Map/Cell/Cell.h
 Map/Cell/CellType.h
 Map/Map.h
 Map/MapType.h
+Tower/Tower.h
+Tower/TowerType.h
 )
 
 target_sources(${PROJECT_NAME} PUBLIC ${SOURCES})
