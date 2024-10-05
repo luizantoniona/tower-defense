@@ -4,20 +4,20 @@
 
 #include <SFML/Graphics.hpp>
 
-#include <Entity/GUI/MainPanel.h>
 #include <Entity/Map/Map.h>
+#include <GUI/MainPanel.h>
 #include <Screens/Screen.h>
 #include <Screens/ScreenGlobals.h>
 
-using Entity::MainPanel;
 using Entity::Map;
+using GUI::MainPanel;
 using Screens::Screen;
 
 BEGIN_SCREEN_NAMESPACE
 
 class GameScreen : public Screen {
 public:
-    GameScreen( int windowHeight, int windowWidth );
+    GameScreen( int windowWidth, int windowHeight );
 
     void handleInput( const sf::Event& event ) override;
     void update() override;

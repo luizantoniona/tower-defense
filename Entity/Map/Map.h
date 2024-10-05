@@ -15,14 +15,18 @@ BEGIN_ENTITY_NAMESPACE
 
 class Map {
 public:
-    Map( MapType mapType, int mapHeight, int mapWidth );
+    Map( MapType mapType, int mapWidth, int mapHeight, int windowWidth, int windowHeight );
 
     void render( sf::RenderWindow& window );
 
 private:
     MapType _mapType;
-    int _width;
-    int _height;
+    int _nrWidthCells;
+    int _nrheightCells;
+    int _mapWidth;
+    int _mapHeight;
+    int _windowWidth;
+    int _windowHeight;
     std::list<Cell> _grid;
 };
 

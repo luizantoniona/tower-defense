@@ -15,7 +15,7 @@ BEGIN_SCREEN_NAMESPACE
 
 class MainMenuScreen : public Screen {
 public:
-    MainMenuScreen( ScreenManager& screenManager );
+    MainMenuScreen( int windowWidth, int windowHeight, ScreenManager& screenManager );
 
     void handleInput( const sf::Event& event ) override;
     void update() override;

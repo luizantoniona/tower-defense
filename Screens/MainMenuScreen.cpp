@@ -7,7 +7,8 @@ using Manager::AssetManager;
 
 BEGIN_SCREEN_NAMESPACE
 
-MainMenuScreen::MainMenuScreen( ScreenManager& screenManager ) : _screenManager( screenManager ), _selectedOption( -1 ) {
+MainMenuScreen::MainMenuScreen( int windowWidth, int windowHeight, ScreenManager& screenManager )
+    : Screen( windowWidth, windowHeight ), _screenManager( screenManager ), _selectedOption( -1 ) {
 
     _font = AssetManager::instance().font( FontType::Arial );
 

@@ -14,23 +14,22 @@ using Manager::AssetManager;
 
 BEGIN_ENTITY_NAMESPACE
 
-Map::Map( MapType mapType, int mapHeight, int mapWidth ) : _width( 0 ), _height( 0 ), _mapType( mapType ) {
+Map::Map( MapType mapType, int mapWidth, int mapHeight, int windowWidth, int windowHeight )
+    : _mapType( mapType ), _nrWidthCells( 0 ), _nrheightCells( 0 ), _mapWidth( mapWidth ), _mapHeight( mapHeight ),
+      _windowWidth( windowWidth ), _windowHeight( windowHeight ) {
 
     Json::Value mapJson = AssetManager::instance().map( mapType );
 
-    _height = mapJson[ "height" ].asInt();
-    _width = mapJson[ "width" ].asInt();
+    _nrWidthCells = mapJson[ "width" ].asInt();
+    _nrheightCells = mapJson[ "height" ].asInt();
 
-    int cellHeight = mapHeight / _height;
-    int cellWidth = mapWidth / _width;
+    int cellWidth = _mapWidth / _nrWidthCells;
+    int cellHeight = _mapHeight / _nrheightCells;
 
-    for ( int y = 0; y < _height; ++y ) {
-        for ( int x = 0; x < _width; ++x ) {
-
+    for ( int y = 0; y < _nrheightCells; ++y ) {
+        for ( int x = 0; x < _nrWidthCells; ++x ) {
             CellType cellType = static_cast<CellType>( mapJson[ "cells" ][ y ][ x ].asInt() );
-
             Cell cell( cellType, x * cellWidth, y * cellHeight, cellWidth, cellHeight );
-
             _grid.push_back( cell );
         }
     }

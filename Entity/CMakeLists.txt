@@ -1,22 +1,26 @@
 set(SOURCES
 Enemy/Enemy.cpp
-GUI/MainPanel.cpp
+Enemy/EnemyFactory.cpp
 Map/Cell/Cell.cpp
 Map/Map.cpp
 Tower/Tower.cpp
+Tower/TowerFactory.cpp
+Shape.cpp
 )
 
 set(HEADERS
 EntityGlobal.h
 Enemy/Enemy.h
+Enemy/EnemyFactory.h
 Enemy/EnemyType.h
-GUI/MainPanel.h
 Map/Cell/Cell.h
 Map/Cell/CellType.h
 Map/Map.h
 Map/MapType.h
 Tower/Tower.h
 Tower/TowerType.h
+Tower/TowerFactory.h
+Shape.h
 )
 
 target_sources(${PROJECT_NAME} PUBLIC ${SOURCES})

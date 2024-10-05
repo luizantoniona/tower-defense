@@ -1,15 +1,16 @@
 set(SOURCES
-GameScreen.cpp
-MainMenuScreen.cpp
-Screen.cpp
+InfoPanel.cpp
+MainPanel.cpp
+Panel.cpp
+TowerPanel.cpp
 )
 
 set(HEADERS
-GameScreen.h
-MainMenuScreen.h
-Screen_Globals.h
-Screen.h
-ScreenType.h
+GUIGlobals.h
+InfoPanel.h
+MainPanel.h
+Panel.h
+TowerPanel.h
 )
 
 target_sources(${PROJECT_NAME} PUBLIC ${SOURCES})

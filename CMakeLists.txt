@@ -17,6 +17,7 @@ target_link_libraries(${PROJECT_NAME} ${EXTERNAL_LIBRARIES})
 
 add_subdirectory(Asset)
 add_subdirectory(Entity)
+add_subdirectory(GUI)
 add_subdirectory(Manager)
 add_subdirectory(Screens)
 

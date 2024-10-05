@@ -17,14 +17,15 @@ BEGIN_MANAGER_NAMESPACE
 GameManager::GameManager() : _window( sf::VideoMode::getDesktopMode(), DISPLAY_NAME, sf::Style::Fullscreen ), _screenManager() {
 
     sf::VideoMode desktopMode = sf::VideoMode::getDesktopMode();
+    int windowWidth = desktopMode.width;
+    int windowHeight = desktopMode.height;
 
-    _view.reset( sf::FloatRect( 0, 0, float( desktopMode.width ), float( desktopMode.height ) ) );
+    _view.reset( sf::FloatRect( 0, 0, float( windowWidth ), float( windowHeight ) ) );
     _window.setView( _view );
 
-    _screenManager.addScreen( ScreenType::MainMenuScreen, std::make_shared<MainMenuScreen>( _screenManager ) );
-
-    _screenManager.addScreen( ScreenType::GameScreen, std::make_shared<GameScreen>( desktopMode.height, desktopMode.width ) );
-
+    _screenManager.addScreen( ScreenType::MainMenuScreen,
+                              std::make_shared<MainMenuScreen>( windowWidth, windowHeight, _screenManager ) );
+    _screenManager.addScreen( ScreenType::GameScreen, std::make_shared<GameScreen>( windowWidth, windowHeight ) );
     _screenManager.setScreen( ScreenType::MainMenuScreen );
 }
 
